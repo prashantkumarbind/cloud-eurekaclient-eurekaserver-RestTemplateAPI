@@ -1,0 +1,5 @@
+package com.pksoftware.controller.feignservice;
+
+public interface HumanResourceFeign {
+
+}

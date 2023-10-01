@@ -1,0 +1,17 @@
+package com.pksoftware.controller.feignservice;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@FeignClient(url="http://localhost:8787", value="employee")
+public interface EmployeeFeign {
+
+	
+		@PostMapping("/employeename/{id}")
+		public String getEmployeeName(@PathVariable int id);
+}
+
+
+

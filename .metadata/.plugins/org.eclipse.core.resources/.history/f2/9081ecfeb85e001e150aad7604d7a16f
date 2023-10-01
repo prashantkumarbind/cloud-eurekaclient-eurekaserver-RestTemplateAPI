@@ -1,0 +1,18 @@
+package com.pksoftware.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+@Controller
+public class ManagerController {
+
+	
+		// first we are use the RestTemplate  
+	
+		@GetMapping("manager/name/{id}")
+		public String microsevice(@PathVariable int id) {
+			
+			  return
+		}
+}

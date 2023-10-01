@@ -1,0 +1,39 @@
+package com.pksoftware.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.client.RestTemplate;
+
+@Controller
+public class ManagerController {
+
+	
+		@Autowired
+		RestTemplate rs;
+		// first we are use the RestTemplate exchange method 
+	
+		@ResponseBody
+		@GetMapping("manager/name/{id}")
+		public String microsevice(@PathVariable int id) {
+			
+			  ResponseEntity<String> empName = rs.exchange("http://localhost:8787/name/"+id, HttpMethod.POST, null, String.class);
+			  ResponseEntity<String> hrName =  rs.exchange("http://localhost:8788/name/"+id, HttpMethod.DELETE, null, String.class);
+			  return ""+empName+"<br/>"+hrName;
+		}
+		
+		//second we are use the RestTemplate getForObject method
+		
+		@ResponseBody
+		@GetMapping("manage1/name1/{id}")
+		public String microservice1(@PathVariable int id) {
+			
+			 	String empName1	=rs.postForObject("http://localhost:8787/name/"+id, String.class);
+			 	String hrName2 = rs.getForObject("http://localhost:8788/name/"+id, String.class);
+			 		
+		}
+}

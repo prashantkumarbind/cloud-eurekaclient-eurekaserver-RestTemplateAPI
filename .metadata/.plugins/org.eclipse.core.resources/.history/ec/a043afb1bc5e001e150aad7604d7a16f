@@ -1,0 +1,25 @@
+package com.pksoftware.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller 
+public class HumanController {
+
+		@ResponseBody
+		@DeleteMapping("/name/{id}")
+		public String humanName(@PathVariable int id) {
+			
+			   return "Human Resource (HR)::LAVKUSH KUMAR";
+		}
+		
+		@ResponseBody
+		@GetMapping("/testing/{id}")
+		public String testing(@PathVariable int id) {
+			
+			  return "message message message";
+		}
+}

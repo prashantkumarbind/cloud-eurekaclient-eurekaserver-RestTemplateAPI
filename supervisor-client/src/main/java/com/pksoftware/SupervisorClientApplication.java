@@ -1,0 +1,15 @@
+package com.pksoftware;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+
+@SpringBootApplication
+public class SupervisorClientApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SupervisorClientApplication.class, args);
+		System.out.println("Spring boot started*****************");
+	}
+
+}

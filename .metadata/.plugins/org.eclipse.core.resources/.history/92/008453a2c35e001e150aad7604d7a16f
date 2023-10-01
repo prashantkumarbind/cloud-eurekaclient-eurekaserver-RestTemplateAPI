@@ -1,0 +1,8 @@
+package com.pksoftware.controller.feignservice;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(url="http://localhost:8787/name", value="employee")
+public interface EmployeeFeign {
+
+}
